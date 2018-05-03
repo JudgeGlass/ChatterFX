@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="411.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.JudgeGlass.ChatterFX.chatter.UI.Controller">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <BorderPane prefHeight="400.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <tabs>
+                      <Tab text="Server Name">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane fx:id="scrollPane" prefHeight="309.0" prefWidth="433.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <TextFlow fx:id="textLayout" prefHeight="307.0" prefWidth="430.0" />
+                                       </content>
+                                    </ScrollPane>
+                                    <TextField fx:id="txtMessage" layoutX="68.0" layoutY="343.0" onAction="#txtSend" prefHeight="25.0" prefWidth="277.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="95.0" />
+                                    <Button fx:id="btnUpload" layoutX="5.0" layoutY="343.0" mnemonicParsing="false" onAction="#upload" prefHeight="25.0" prefWidth="62.0" text="Upload" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="5.0" />
+                                    <Button layoutX="348.0" layoutY="343.0" mnemonicParsing="false" onAction="#btnSend" prefHeight="25.0" prefWidth="78.0" text="Send" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </center>
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="10.0" layoutY="14.0" prefHeight="20.0" prefWidth="55.0" text="Servers:" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="135.0" AnchorPane.topAnchor="14.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="serverList" layoutY="34.0" prefHeight="298.0" prefWidth="200.0" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="34.0" />
+                        <Button layoutX="10.0" layoutY="344.0" mnemonicParsing="false" onAction="#addServer" prefHeight="25.0" prefWidth="180.0" text="Add" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                        <Button layoutX="10.0" layoutY="367.0" mnemonicParsing="false" onAction="#connect" prefHeight="25.0" prefWidth="180.0" text="Connect" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                     </children>
+                  </AnchorPane>
+               </left>
+               <top>
+                  <MenuBar BorderPane.alignment="CENTER">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                          <MenuItem mnemonicParsing="false" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#showAboutDialog" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </top>
+            </BorderPane>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
